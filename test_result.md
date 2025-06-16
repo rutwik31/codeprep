@@ -122,15 +122,18 @@ backend:
   
   - task: "Problem Management API"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "high"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Created REST endpoints for problems: GET /api/problems, GET /api/problems/{id}, POST /api/execute. Added sample problems with test cases."
+      - working: true
+        agent: "testing"
+        comment: "Tested the Problem Management API endpoints. GET /api/problems successfully returns all problems with correct structure. GET /api/problems/{id} correctly retrieves specific problems by ID and returns 404 for non-existent problems. All three sample problems (two-sum, palindrome-check, fibonacci) are properly defined with descriptions, test cases, and time limits."
   
   - task: "Database Integration"
     implemented: true

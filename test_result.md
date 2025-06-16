@@ -137,15 +137,18 @@ backend:
   
   - task: "Database Integration"
     implemented: true
-    working: "NA"
+    working: true
     file: "/app/backend/server.py"
     stuck_count: 0
     priority: "medium"
-    needs_retesting: true
+    needs_retesting: false
     status_history:
       - working: "NA"
         agent: "main"
         comment: "Integrated MongoDB for storing submissions. Added submission tracking with results."
+      - working: true
+        agent: "testing"
+        comment: "Tested the database integration for storing submissions. The system successfully stores code submissions in MongoDB and retrieves them via the GET /api/submissions endpoint. The submission records include problem ID, code, execution results, and timestamps."
 
 frontend:
   - task: "Problem List Interface"
